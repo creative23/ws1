@@ -1,0 +1,34 @@
+SELECT  STATUS,
+	SUM( IF((STATUS) = 'rft', qty ,0) ) AS rft,
+	SUM( IF((STATUS) = 'rework', qty ,0) ) AS rework,
+	SUM( IF((STATUS) = 'scrap', qty ,0) ) AS scrap
+FROM faults2
+GROUP BY STATUS
+
+SELECT  STATUS,
+	SUM( IF((Time_) BETWEEN '00:00:00' AND '00:59:59' 'rft', qty ,0) ) AS 12AM,	
+	SUM( IF((Time_) BETWEEN '01:00:00' AND '01:59:59' 'rft', qty ,0) ) AS 1AM,
+	SUM( IF((Time_) BETWEEN '02:00:00' AND '02:59:59' 'rft', qty ,0) ) AS 2AM,
+	SUM( IF((Time_) BETWEEN '03:00:00' AND '03:59:59' 'rft', qty ,0) ) AS 3AM,
+	SUM( IF((Time_) BETWEEN '04:00:00' AND '04:59:59' 'rft', qty ,0) ) AS 4AM,
+	SUM( IF((Time_) BETWEEN '05:00:00' AND '05:59:59' 'rft', qty ,0) ) AS 5AM,
+	SUM( IF((Time_) BETWEEN '06:00:00' AND '06:59:59' 'rft', qty ,0) ) AS 6AM,
+	SUM( IF((Time_) BETWEEN '07:00:00' AND '07:59:59' 'rft', qty ,0) ) AS 7AM,
+	SUM( IF((Time_) BETWEEN '08:00:00' AND '08:59:59' 'rft', qty ,0) ) AS 8AM,
+	SUM( IF((Time_) BETWEEN '09:00:00' AND '09:59:59' 'rft', qty ,0) ) AS 9AM,
+	SUM( IF((Time_) BETWEEN '10:00:00' AND '10:59:59' 'rft', qty ,0) ) AS 10AM,
+	SUM( IF((Time_) BETWEEN '11:00:00' AND '11:59:59' 'rft', qty ,0) ) AS 11AM,
+	SUM( IF((Time_) BETWEEN '12:00:00' AND '12:59:59' 'rft', qty ,0) ) AS 12PM,
+	SUM( IF((Time_) BETWEEN '13:00:00' AND '13:59:59' 'rft', qty ,0) ) AS 1PM,
+	SUM( IF((Time_) BETWEEN '14:00:00' AND '14:59:59' 'rft', qty ,0) ) AS 2PM,
+	SUM( IF((Time_) BETWEEN '15:00:00' AND '15:59:59' 'rft', qty ,0) ) AS 3PM,
+	SUM( IF((Time_) BETWEEN '16:00:00' AND '16:59:59' 'rft', qty ,0) ) AS 4PM,
+	SUM( IF((Time_) BETWEEN '17:00:00' AND '17:59:59' 'rft', qty ,0) ) AS 5PM,
+	SUM( IF((Time_) BETWEEN '18:00:00' AND '18:59:59' 'rft', qty ,0) ) AS 6PM,
+	SUM( IF((Time_) BETWEEN '19:00:00' AND '19:59:59' 'rft', qty ,0) ) AS 7PM,
+	SUM( IF((Time_) BETWEEN '20:00:00' AND '20:59:59' 'rft', qty ,0) ) AS 8PM,
+	SUM( IF((Time_) BETWEEN '21:00:00' AND '21:59:59' 'rft', qty ,0) ) AS 9PM,
+	SUM( IF((Time_) BETWEEN '22:00:00' AND '22:59:59' 'rft', qty ,0) ) AS 10PM,
+	SUM( IF((Time_) BETWEEN '23:00:00' AND '23:59:59' 'rft', qty ,0) ) AS 11PM
+FROM faults2
+GROUP BY STATUS
